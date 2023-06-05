@@ -53,3 +53,119 @@ header {
 .options {
     color: #ffcc00;
 }
+
+/* ALL */
+
+/* Back */
+.backDiv {
+    position: absolute;
+    width: 30px;
+    left: 25%;
+    top: 50%;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+    text-align: center;
+}
+
+.back {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+.back:hover {
+    color: #fff;
+}
+
+
+/* Start */
+.startDiv {
+    position: absolute;
+    width: 30px;
+    left: 75%;
+    top: 50%;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+.start {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+.start:hover {
+    color: #fff;
+}
+
+
+/* one player */
+
+.pizarra1 {
+    background-image: url(./img/fondopizarra.jpeg);
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    outline: 6px solid white;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff;
+    color: white;
+}
+
+.info {
+    color: white;
+    text-shadow: 0 0 10px #00ffff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 30px;
+}
+
+.texto {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.label {
+    margin-left: 70px;
+}
+
+/* two player */
+
+.pizarra2 {
+    background-image: url(./img/fondopizarra.jpeg);
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    outline: 6px solid white;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+/* game */
+.pizarra3 {
+    background-image: url(./img/fondopizarra.jpeg);
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    outline: 6px solid white;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.casilla {
+    outline: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
