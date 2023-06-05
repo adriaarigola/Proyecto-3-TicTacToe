@@ -6,6 +6,7 @@ body {
     justify-content: center;
 }
 
+/* HEADER */
 header {
     color: whitesmoke;
     margin: 30px;
@@ -16,26 +17,28 @@ header {
     text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px#00ffff, 0 0 60px;
 }
 
+/* INDEX */
 .pizarra {
     background-image: url(./img/fondopizarra.jpeg);
     width: 500px;
     height: 500px;
     border-radius: 20px;
     outline: 6px solid white;
-    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .opciones {
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: 0 0 10px #00ffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
 
+.titulos {
+    font-size: 3rem;
 }
 
 .links {
@@ -50,17 +53,12 @@ header {
     color: #ffcc00;
 }
 
-.options {
-    color: #ffcc00;
-}
-
 /* ALL */
 
 /* Back */
 .backDiv {
     position: absolute;
-    width: 30px;
-    left: 25%;
+    left: 21%;
     top: 50%;
     background-color: #111;
     padding: 10px;
@@ -83,7 +81,6 @@ header {
 /* Start */
 .startDiv {
     position: absolute;
-    width: 30px;
     left: 75%;
     top: 50%;
     background-color: #111;
@@ -103,7 +100,7 @@ header {
 }
 
 
-/* one player */
+/* One Player & Two Players */
 
 .pizarra1 {
     background-image: url(./img/fondopizarra.jpeg);
@@ -120,34 +117,29 @@ header {
     text-shadow: 0 0 10px #00ffff;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 30px;
+    text-align: center;
 }
 
 .texto {
-    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
-
 
 .label {
-    margin-left: 70px;
-}
-
-/* two player */
-
-.pizarra2 {
-    background-image: url(./img/fondopizarra.jpeg);
-    width: 500px;
-    height: 500px;
-    border-radius: 20px;
-    outline: 6px solid white;
-    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    margin-top: 10px;
 }
 
 
-/* game */
+.firstMove {
+    margin-top: 60px;
+}
+
+.pieces {
+    margin-top: 40px;
+}
+
+/* GAME */
 .pizarra3 {
     background-image: url(./img/fondopizarra.jpeg);
     width: 500px;
