@@ -161,3 +161,88 @@ header {
     justify-content: center;
     align-items: center;
 }
+
+/* GANADOR */
+iframe {
+    width: 430px;
+    height: 260px;
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 767px) {
+
+    /* HEADER Mobile*/
+    header {
+        color: whitesmoke;
+        margin: 30px;
+        font-size: 16px;
+        font-family: "Arial", sans-serif;
+        color: #fff;
+        letter-spacing: 4px;
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px#00ffff, 0 0 60px;
+        text-align: center;
+    }
+
+    /* INDEX */
+    .pizarra,
+    .pizarra1 {
+        width: 300px;
+        height: 300px;
+        outline: 3px solid white;
+    }
+
+    .pizarra3 {
+        background-image: url(./img/fondopizarra.jpeg);
+        width: 300px;
+        height: 300px;
+        outline: 3px solid white;
+        box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff;
+        display: flex;
+        flex-direction: column;
+        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .titulos {
+        font-size: 2rem;
+    }
+
+    /* ALL */
+
+    /* BACK Mobile*/
+    .backDiv {
+        left: 10%;
+        top: 80%;
+    }
+
+    /* START Mobile*/
+    .startDiv {
+        left: 70%;
+        top: 80%;
+    }
+
+    /* One Player & Two Players Mobile*/
+    .info {
+        margin: 0px;
+    }
+
+    .label {
+        margin-top: 5px;
+    }
+
+
+    .firstMove {
+        margin-top: 20px;
+    }
+
+    .pieces {
+        display: none;
+    }
+
+    iframe {
+        width: 200px;
+        height: 100px;
+    }
+}
