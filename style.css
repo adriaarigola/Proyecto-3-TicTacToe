@@ -135,6 +135,10 @@ header {
     margin-top: 60px;
 }
 
+.figuras {
+    margin-inline: 30px;
+}
+
 .pieces {
     margin-top: 40px;
 }
@@ -160,6 +164,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#scoreboard {
+    width: 500px;
+    height: 20px;
 }
 
 /* GANADOR */
