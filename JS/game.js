@@ -23,7 +23,6 @@ const board = Array.from(document.querySelectorAll(".casilla"));
 board.forEach((casilla) => {
     casilla.addEventListener("click", (event) => {
         const casillaSeleccionada = event.target;
-        const casillaId = casillaSeleccionada.id;
 
         if (casillaSeleccionada.innerHTML === "" && !turn) {
             const imagen = document.createElement("img");
