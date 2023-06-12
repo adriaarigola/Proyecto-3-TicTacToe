@@ -180,7 +180,7 @@ header {
 }
 
 #Player2 {
-    display: inline;
+    display: inline-block;
     margin-left: 250px;
     font-family: "Arial", sans-serif;
     color: #fff;

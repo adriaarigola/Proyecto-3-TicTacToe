@@ -1,9 +1,18 @@
 // obtener nombres jugadores from SessionStorage
-let player1 = document.getElementById("Player1");
-player1.innerHTML = sessionStorage.getItem("Name player 1");
+// let player1 = document.getElementById("Player1");
+// player1.innerHTML = sessionStorage.getItem("Name player 1");
 
-let player2 = document.getElementById("Player2");
-player2.innerHTML = sessionStorage.getItem("Name player 2");
+document.addEventListener("DOMContentLoaded", function () {
+    const nombre1 = sessionStorage.getItem("nombre1");
+    const player1 = document.getElementById("Player1");
+    player1.textContent = nombre1;
+
+    const nombre2 = sessionStorage.getItem("nombre2");
+    const player2 = document.getElementById("Player2");
+    player2.textContent = nombre2;
+});
+
+
 
 // var
 let currentPlayer = "X";
@@ -27,6 +36,7 @@ board.forEach((casilla) => {
             casillaSeleccionada.appendChild(imagen);
 
             if (checkWinner()) {
+                sessionStorage.setItem("winner", currentPlayer);
                 setTimeout(pageWinner, 1000);
             } else if (checkDraw()) {
                 setTimeout(pageDraw, 1000);
