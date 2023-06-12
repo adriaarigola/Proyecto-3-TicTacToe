@@ -137,6 +137,8 @@ header {
 
 .figuras {
     margin-inline: 30px;
+    width: 50px;
+    height: 50px;
 }
 
 .pieces {
@@ -166,9 +168,27 @@ header {
     align-items: center;
 }
 
-#scoreboard {
-    width: 500px;
-    height: 20px;
+#Player1 {
+    display: inline-block;
+    font-family: "Arial", sans-serif;
+    color: #fff;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    text-align: left;
+}
+
+#Player2 {
+    display: inline;
+    margin-left: 250px;
+    font-family: "Arial", sans-serif;
+    color: #fff;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    text-align: right;
 }
 
 /* GANADOR */
@@ -248,6 +268,20 @@ iframe {
 
     .pieces {
         display: none;
+    }
+
+    .figuras {
+        width: 30px;
+        height: 30px;
+    }
+
+    #Player1 {
+        padding: 10px;
+    }
+
+    #Player2 {
+        margin-left: 80px;
+        padding: 10px;
     }
 
     iframe {

@@ -1,33 +1,35 @@
-const casillas = document.getElementsByClassName("casilla");
-let turn = false;
+// obtener nombres jugadores from SessionStorage
+let player1 = document.getElementById("Player1");
+player1.innerHTML = sessionStorage.getItem("Name player 1");
 
+let player2 = document.getElementById("Player2");
+player2.innerHTML = sessionStorage.getItem("Name player 2");
 
-// Obtiene el nombre del jugador almacenado en sessionStorage
-let playerName = sessionStorage.getItem("Player1");
-
-// Actualiza el contenido del elemento HTML con el nombre del jugador
-document.getElementById("Player1").textContent = playerName;
-
-
-// Variables
+// var
 let currentPlayer = "X";
-let gameEnded = false;
+let turn = false;
 const board = Array.from(document.querySelectorAll(".casilla"));
 
-// Event Listeners
+// estructura juego
 board.forEach((casilla) => {
     casilla.addEventListener("click", (event) => {
         const casillaSeleccionada = event.target;
         const casillaId = casillaSeleccionada.id;
 
-        if (casillaSeleccionada.innerText === "" && !gameEnded) {
-            casillaSeleccionada.innerText = currentPlayer;
-            casillaSeleccionada.classList.add(currentPlayer);
+        if (casillaSeleccionada.innerHTML === "" && !turn) {
+            const imagen = document.createElement("img");
+            imagen.classList.add("figuras");
+            if (currentPlayer === "X") {
+                imagen.src = "./img/piezas/xamarilla1.png";
+            } else {
+                imagen.src = "./img/piezas/oazul1.png";
+            }
+            casillaSeleccionada.appendChild(imagen);
 
-            if (checkWin()) {
-                endGame(false);
+            if (checkWinner()) {
+                setTimeout(pageWinner, 1000);
             } else if (checkDraw()) {
-                endGame(true);
+                setTimeout(pageDraw, 1000);
             } else {
                 currentPlayer = currentPlayer === "X" ? "O" : "X";
             }
@@ -35,9 +37,9 @@ board.forEach((casilla) => {
     });
 });
 
-// Functions
-const checkWin = () => {
-    const winningCombinations = [
+// comrpobar ganador
+const checkWinner = () => {
+    const CombinationWin = [
         [0, 1, 2],
         [3, 4, 5],
         [6, 7, 8],
@@ -48,32 +50,41 @@ const checkWin = () => {
         [2, 4, 6]
     ];
 
-    return winningCombinations.some(combination => {
+    return CombinationWin.some(combination => {
         const [a, b, c] = combination;
         return (
-            board[a].innerText === currentPlayer &&
-            board[b].innerText === currentPlayer &&
-            board[c].innerText === currentPlayer
-        );
+            board[a].innerHTML.includes('xamarilla1.png') &&
+            board[b].innerHTML.includes('xamarilla1.png') &&
+            board[c].innerHTML.includes('xamarilla1.png')
+        ) || (
+                board[a].innerHTML.includes('oazul1.png') &&
+                board[b].innerHTML.includes('oazul1.png') &&
+                board[c].innerHTML.includes('oazul1.png')
+            );
     });
 };
 
+
+// funcion empate
 const checkDraw = () => {
-    return board.every(casilla => casilla.innerText !== "");
+    return board.every(casilla => casilla.innerHTML !== "");
 };
 
-const endGame = (draw) => {
-    gameEnded = true;
-    const message = draw ? "¡Empate!" : `¡${currentPlayer} ha ganado!`;
-    alert(message);
-    resetBoard();
+// redirigir dependiendo ganadores
+const pageWinner = () => {
+    window.location.href = "ganador.html";
 };
 
-const resetBoard = () => {
-    board.forEach(casilla => {
-        casilla.innerText = "";
-        casilla.classList.remove("X", "O");
-    });
-    currentPlayer = "X";
-    gameEnded = false;
+const pageDraw = () => {
+    window.location.href = "empate.html";
 };
+
+
+// // funcion reset tablero
+// const resetBoard = () => {
+//     board.forEach(casilla => {
+//         casilla.innerHTML = "";
+//     });
+//     currentPlayer = "X";
+//     turn = false;
+// };
