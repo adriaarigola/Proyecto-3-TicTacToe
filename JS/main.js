@@ -1,12 +1,14 @@
-// let userName_1 = document.getElementById("Player_1");
-// let Player_1 = userName_1.value;
-// console.log(Player_1);
-// sessionStorage.setItem("Name player 1", Player_1);
+const NAME_KEY = "gamekey";
 
-function guardarNombre() {
+function saveName() {
     const nombre1 = document.getElementById("Player_1").value;
     sessionStorage.setItem("nombre1", nombre1);
 
     const nombre2 = document.getElementById("Player_2").value;
     sessionStorage.setItem("nombre2", nombre2);
 }
+
+// function getName() {
+//     const name_1 = sessionStorage.getItem("nombre1", name_1);
+//     const name_2 = sessionStorage.getItem("nombre2", name_2);
+// }

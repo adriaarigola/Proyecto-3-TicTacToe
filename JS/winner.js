@@ -1,3 +1,4 @@
+// player winner
 document.addEventListener("DOMContentLoaded", function () {
     const winner = sessionStorage.getItem("winner");
     const Player1 = sessionStorage.getItem("nombre1");

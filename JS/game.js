@@ -1,7 +1,4 @@
-// obtener nombres jugadores from SessionStorage
-// let player1 = document.getElementById("Player1");
-// player1.innerHTML = sessionStorage.getItem("Name player 1");
-
+// Get players names from SessionStorage
 document.addEventListener("DOMContentLoaded", function () {
     const nombre1 = sessionStorage.getItem("nombre1");
     const player1 = document.getElementById("Player1");
@@ -12,24 +9,26 @@ document.addEventListener("DOMContentLoaded", function () {
     player2.textContent = nombre2;
 });
 
-
-
 // var
 let currentPlayer = "X";
 let turn = false;
 const board = Array.from(document.querySelectorAll(".casilla"));
 
-// estructura juego
+// estructure game
 board.forEach((casilla) => {
+    document.getElementById("Player1").style.backgroundColor = "red";
     casilla.addEventListener("click", (event) => {
         const casillaSeleccionada = event.target;
-
-        if (casillaSeleccionada.innerHTML === "" && !turn) {
+        if (casillaSeleccionada.innerHTML === "") {
             const imagen = document.createElement("img");
             imagen.classList.add("figuras");
             if (currentPlayer === "X") {
+                document.getElementById("Player1").style.backgroundColor = "black";
+                document.getElementById("Player2").style.backgroundColor = "red";
                 imagen.src = "./img/piezas/xamarilla1.png";
             } else {
+                document.getElementById("Player2").style.backgroundColor = "black";
+                document.getElementById("Player1").style.backgroundColor = "red";
                 imagen.src = "./img/piezas/oazul1.png";
             }
             casillaSeleccionada.appendChild(imagen);
@@ -46,7 +45,19 @@ board.forEach((casilla) => {
     });
 });
 
-// comrpobar ganador
+// check turn player
+// const checkTurn = () => {
+//     if (currentPlayer === "X") {
+//         let player1Element = document.getElementById("Player1");
+//         player1Element.style.backgroundColor = "red";
+//     } else {
+//         let player2Element = document.getElementById("Player2");
+//         player2Element.style.backgroundColor = "red";
+//     }
+// }
+
+
+// check winner
 const checkWinner = () => {
     const CombinationWin = [
         [0, 1, 2],
@@ -74,26 +85,17 @@ const checkWinner = () => {
 };
 
 
-// funcion empate
+// function draw
 const checkDraw = () => {
     return board.every(casilla => casilla.innerHTML !== "");
 };
 
-// redirigir dependiendo ganadores
+// page winners
 const pageWinner = () => {
     window.location.href = "ganador.html";
 };
 
+// page draw
 const pageDraw = () => {
     window.location.href = "empate.html";
 };
-
-
-// // funcion reset tablero
-// const resetBoard = () => {
-//     board.forEach(casilla => {
-//         casilla.innerHTML = "";
-//     });
-//     currentPlayer = "X";
-//     turn = false;
-// };
